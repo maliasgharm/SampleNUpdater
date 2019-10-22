@@ -40,7 +40,7 @@ class UpdateChecker(val context: Context) {
             e.printStackTrace()
         }
 
-        Updater.connection?.addRequest(params, "android", countTryToConnect = 10) {
+        Updater.connection?.addRequest(params, "android/index.php", countTryToConnect = 10) {
             if (it.type == Callback.TYPE_SUCCESS) {
                 val jsonObject = JSONArray(it.response).getJSONObject(0)
                 val message = if (jsonObject.has("msg")) jsonObject.getString("msg") else ""

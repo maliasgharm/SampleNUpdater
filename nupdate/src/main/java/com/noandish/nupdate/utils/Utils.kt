@@ -13,7 +13,7 @@ import java.io.File
 import java.text.DecimalFormat
 
 object Utils {
-    const val DEFAULT_URL_UPDATE = "http://148.251.100.207/nUpdater/"
+    const val DEFAULT_URL_UPDATE = "http://148.251.100.207/nUpdater"
     val screenWidth: Int
         get() = Resources.getSystem().displayMetrics.widthPixels
 

@@ -3,6 +3,7 @@ package com.noandish.nupdate.connection
 import android.content.Context
 import android.os.Handler
 import android.util.Log
+import com.android.volley.AuthFailureError
 import com.android.volley.DefaultRetryPolicy
 import com.android.volley.RequestQueue
 import com.android.volley.Response
@@ -143,21 +144,15 @@ class Connection(val context: Context) {
                 params["Content-Type"] = "application/json; charset=UTF-8"
                 return super.getHeaders()
             }
-
-            override fun getBodyContentType(): String {
-                return "application/json; charset=utf-8"
-            }
-
-            override fun getBody(): ByteArray {
-                Log.i(TAG, "url : $url & sendingParams : $jsonParamsPost")
-                return jsonParamsPost.toString().toByteArray(Charsets.UTF_8)
-            }
-//            @Throws(AuthFailureError::class)
-//            override fun getParams(): Map<String, String> {
-//                val params = HashMap<String, String>()
-//                params["myData"] = jsonParamsPost.toString()
-//                return params
+//            override fun getBody(): ByteArray {
+//                Log.i(TAG, "url : $url & sendingParams : $jsonParamsPost")
+//                return jsonParamsPost.toString().toByteArray(Charsets.UTF_8)
 //            }
+            override fun getParams(): Map<String, String> {
+                val params = HashMap<String, String>()
+                params["myData"] = jsonParamsPost.toString()
+                return params
+            }
         }
 
         countTry++
