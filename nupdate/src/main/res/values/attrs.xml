@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="NTextView" >
+        <attr name="typeface" format="string" />
+        <attr name="strokeColor" format="color" />
+        <attr name="strokeWidth" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="NButton" >
+        <attr name="typefaceButton" format="string" />
+        <attr name="strokeColorButton" format="color" />
+        <attr name="strokeWidthButton" format="dimension" />
+    </declare-styleable>
+
+</resources>
